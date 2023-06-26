@@ -1,0 +1,8 @@
+{
+	"version": "0.1.0",
+	"description": "MySQL database client bindings",
+	"url": "https://github.com/laytan/odin-mysql",
+	"readme": "README.md",
+	"license": "MIT",
+	"keywords": ["bindings", "mysql", "database"]
+}
