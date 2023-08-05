@@ -1,5 +1,5 @@
 {
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "MySQL database client bindings",
 	"url": "https://github.com/laytan/odin-mysql",
 	"readme": "README.md",
