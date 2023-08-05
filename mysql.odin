@@ -13,7 +13,10 @@ when ODIN_OS == .Darwin {
 
 // Opague structs, fields are never accessed (always through procedures),
 // so no need to define them in bindings.
-MySQL :: struct {}
+MySQL :: struct {
+    __padding: [1160]byte,
+}
+
 Statement :: struct {}
 
 Result :: struct {
