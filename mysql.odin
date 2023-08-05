@@ -360,8 +360,10 @@ foreign lib {
 	// https://dev.mysql.com/doc/c-api/8.0/en/mysql-insert-id.html
 	insert_id :: proc(mysql: ^MySQL) -> c.uint64_t ---
 	// https://dev.mysql.com/doc/c-api/8.0/en/mysql-library-end.html
+	@(link_name = "mysql_server_end")
 	library_end :: proc() ---
 	// https://dev.mysql.com/doc/c-api/8.0/en/mysql-library-init.html
+	@(link_name = "mysql_server_init")
 	library_init :: proc(argc: c.int, argv: [^]cstring, groups: [^]cstring) -> c.int ---
 	// https://dev.mysql.com/doc/c-api/8.0/en/mysql-list-dbs.html
 	list_dbs :: proc(mysql: ^MySQL, wild: cstring) -> ^Result ---
