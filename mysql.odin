@@ -13,12 +13,14 @@ when ODIN_OS == .Darwin {
 		"system:mysqlclient.lib",
 		"system:Advapi32.lib",
 	}
+} else {
+    foreign import lib "system:mysqlclient"
 }
 
 // Opague structs, fields are never accessed (always through procedures),
 // so no need to define them in bindings.
 MySQL :: struct {
-	__padding: [1160]byte,
+    __padding: [1160]byte,
 }
 
 Statement :: struct {}
