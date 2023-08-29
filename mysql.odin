@@ -6,7 +6,13 @@ package mysql
 import "core:c"
 
 when ODIN_OS == .Darwin {
-    foreign import lib "./includes/libmysqlclient.dylib"
+	foreign import lib "./includes/libmysqlclient.dylib"
+} else when ODIN_OS == .Windows {
+	@(extra_linker_flags="/NODEFAULTLIB:libcmt")
+	foreign import lib {
+		"system:mysqlclient.lib",
+		"system:Advapi32.lib",
+	}
 } else {
     foreign import lib "system:mysqlclient"
 }
