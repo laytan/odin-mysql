@@ -6,7 +6,7 @@ package mysql
 import "core:c"
 
 when ODIN_OS == .Darwin {
-    foreign import lib "./includes/libmysqlclient.dylib"
+	foreign import lib "./includes/libmysqlclient.dylib"
 } else when ODIN_OS == .Windows {
 	@(extra_linker_flags="/NODEFAULTLIB:libcmt")
 	foreign import lib {
@@ -18,7 +18,7 @@ when ODIN_OS == .Darwin {
 // Opague structs, fields are never accessed (always through procedures),
 // so no need to define them in bindings.
 MySQL :: struct {
-    __padding: [1160]byte,
+	__padding: [1160]byte,
 }
 
 Statement :: struct {}
